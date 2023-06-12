@@ -1,17 +1,18 @@
 Attribute VB_Name = "Module1"
 
-Sub ‹æ•ª“ü—Í1(dummy)
+Sub åŒºåˆ†å…¥åŠ›1(dummy)
 
 Dim LastRow As Long
 Dim i As Long
     
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
+    'Gitãƒ†ã‚¹ãƒˆ
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
     
-    'ÅIs‚Ü‚Åƒ‹[ƒv
+    'æœ€çµ‚è¡Œã¾ã§ãƒ«ãƒ¼ãƒ—
     For i = 17 To LastRow
     
-        '“X”Ô†‚ğg‚Á‚ÄO—ñ“ü—Í
+        'åº—ç•ªå·ã‚’ä½¿ã£ã¦Oåˆ—å…¥åŠ›
         On Error Resume Next
         
         With Cells(i, "D")
@@ -19,7 +20,7 @@ Dim i As Long
     
         End With
         
-        '‰c‹ÆŠ‚ğg‚Á‚ÄP—ñ“ü—Í
+        'å–¶æ¥­æ‰€ã‚’ä½¿ã£ã¦Påˆ—å…¥åŠ›
         With Cells(i, "E")
             .Offset(0, 11) = WorksheetFunction.VLookup(.Value, Worksheets("Sheet1").Range("B:C"), 3, False)
     
@@ -31,25 +32,25 @@ Dim i As Long
 
 End Sub
 
-Sub ‹æ•ª“ü—Í2(dummy)
+Sub åŒºåˆ†å…¥åŠ›2(dummy)
 
 Dim LastRow As Long
 Dim i As Long
 
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
     With ActiveSheet
 
-        'ÅIs‚Ü‚Åƒ‹[ƒv
+        'æœ€çµ‚è¡Œã¾ã§ãƒ«ãƒ¼ãƒ—
         For i = 17 To LastRow
 
-            '“Á’è‚Ì‘—•tæ‚Ì‚Ì‹æ•ª“ü—Í
-            If InStr(Cells(i, "E"), "¬—ÑHŒ|Ğ") >= 1 Then
-                .Cells(i, "B") = "ˆÚŠÇ•ª"
+            'ç‰¹å®šã®é€ä»˜å…ˆã®æ™‚ã®åŒºåˆ†å…¥åŠ›
+            If InStr(Cells(i, "E"), "å°æ—å·¥èŠ¸ç¤¾") >= 1 Then
+                .Cells(i, "B") = "ç§»ç®¡åˆ†"
                 
-            ElseIf InStr(Cells(i, "E"), "DNPƒƒWƒXƒeƒBƒNƒX") >= 1 Then
-                .Cells(i, "B") = "“]‘—•ª"
+            ElseIf InStr(Cells(i, "E"), "DNPãƒ­ã‚¸ã‚¹ãƒ†ã‚£ã‚¯ã‚¹") >= 1 Then
+                .Cells(i, "B") = "è»¢é€åˆ†"
                 
             End If
             
@@ -59,28 +60,28 @@ Dim i As Long
     
 End Sub
 
-Sub ”ñ¿‹íœ(dummy)
+Sub éè«‹æ±‚å‰Šé™¤(dummy)
 
 Dim LastRow As Long
 Dim i As Long
 Dim j As Long
 Dim Target As Variant
 
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
-    '‘ÎÛ•¶š
-    Target = Array("”ñ¿‹")
+    'å¯¾è±¡æ–‡å­—
+    Target = Array("éè«‹æ±‚")
 
     Application.DisplayAlerts = False
         With ActiveSheet
 
-            'ÅIs‚©‚çæ“ª‚Öƒ‹[ƒv
+            'æœ€çµ‚è¡Œã‹ã‚‰å…ˆé ­ã¸ãƒ«ãƒ¼ãƒ—
             For i = LastRow To 1 Step -1
 
                 For j = 0 To UBound(Target)
 
-                    '“Á’è•¶š‚ª‚ ‚Á‚½‚çsíœ
+                    'ç‰¹å®šæ–‡å­—ãŒã‚ã£ãŸã‚‰è¡Œå‰Šé™¤
                     If InStr(Cells(i, 13), Target(j)) >= 1 Then
                         .Rows(i).Delete
                     End If
@@ -94,33 +95,33 @@ Dim Target As Variant
 
 End Sub
 
-Sub ƒR[ƒq[ƒJƒ^ƒƒO’uŠ·(dummy)
+Sub ã‚³ãƒ¼ãƒ’ãƒ¼ã‚«ã‚¿ãƒ­ã‚°ç½®æ›(dummy)
 
 Dim LastRow As Long
 Dim i As Long
 
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
     With ActiveSheet
 
-        'ÅIs‚©‚çæ“ª‚Öƒ‹[ƒv
+        'æœ€çµ‚è¡Œã‹ã‚‰å…ˆé ­ã¸ãƒ«ãƒ¼ãƒ—
         For i = LastRow To 1 Step -1
 
             On Error Resume Next
             
-            'ƒR[ƒq[‚ÆƒJƒ^ƒƒO’uŠ·
-            If InStr(Cells(i, "F"), "ƒR[ƒq[") >= 1 Then
+            'ã‚³ãƒ¼ãƒ’ãƒ¼ã¨ã‚«ã‚¿ãƒ­ã‚°ç½®æ›
+            If InStr(Cells(i, "F"), "ã‚³ãƒ¼ãƒ’ãƒ¼") >= 1 Then
                 .Cells(i, "F").ClearContents
-                .Cells(i, "F") = "FFƒR[ƒq[ŠÖ˜A"
+                .Cells(i, "F") = "FFã‚³ãƒ¼ãƒ’ãƒ¼é–¢é€£"
                 
             ElseIf InStr(Cells(i, "F"), "FAMIMACAFE") >= 1 Then
                 .Cells(i, "F").ClearContents
-                .Cells(i, "F") = "FFƒR[ƒq[ŠÖ˜A"
+                .Cells(i, "F") = "FFã‚³ãƒ¼ãƒ’ãƒ¼é–¢é€£"
                 
-            ElseIf InStr(Cells(i, "F"), "ƒJƒ^ƒƒO") >= 1 Then
+            ElseIf InStr(Cells(i, "F"), "ã‚«ã‚¿ãƒ­ã‚°") >= 1 Then
                 .Cells(i, "F").ClearContents
-                .Cells(i, "F") = "ƒJƒ^ƒƒOŠÖ˜A"
+                .Cells(i, "F") = "ã‚«ã‚¿ãƒ­ã‚°é–¢é€£"
                 
             End If
             
@@ -132,11 +133,11 @@ Dim i As Long
     
 End Sub
 
-Sub •Ê‘—’Ç‰Á(dummy)
+Sub åˆ¥é€è¿½åŠ (dummy)
 
 Dim LastRow As Long
-Dim myDate As Date '”­s“ú
-Dim fstDate As Date 'Œ‰
+Dim myDate As Date 'ç™ºè¡Œæ—¥
+Dim fstDate As Date 'æœˆåˆ
 Dim i As Long
 Dim bs As Borders
 Dim myMon As Date
@@ -147,19 +148,19 @@ Dim myMon As Date
     
     i = GetWeekDay(fstDate, Range("L5"), vbTuesday)
 
-    's‚Ì’Ç‰Á
+    'è¡Œã®è¿½åŠ 
     Rows(LastRow + 1).Insert
     
-    '”wŒiF‚ğ‰©F‚É•ÏX
+    'èƒŒæ™¯è‰²ã‚’é»„è‰²ã«å¤‰æ›´
     Range(Cells(LastRow + 1, "A"), Cells(LastRow + 1, "L")).Interior.ColorIndex = 6
     
-    '˜gü‚Ì’Ç‰Á
+    'æ ç·šã®è¿½åŠ 
     Set bs = Range(Cells(LastRow + 1, "A"), Cells(LastRow + 1, "L")).Borders
     bs.LineStyle = xlContinuous
     
-    '•¶š‚Ì’Ç‰Á
-    Cells(LastRow + 1, "E") = "RŒ`“ì‰c‹ÆŠ"
-    Cells(LastRow + 1, "F") = "FXSSƒVƒ‡[ƒJ[ƒh•Ê‘—"
+    'æ–‡å­—ã®è¿½åŠ 
+    Cells(LastRow + 1, "E") = "å±±å½¢å—å–¶æ¥­æ‰€"
+    Cells(LastRow + 1, "F") = "FXSSã‚·ãƒ§ãƒ¼ã‚«ãƒ¼ãƒ‰åˆ¥é€"
     Cells(LastRow + 1, "G") = 1
     Cells(LastRow + 1, "H") = 185
     Cells(LastRow + 1, "I") = 185
@@ -167,33 +168,33 @@ Dim myMon As Date
     Cells(LastRow + 1, "K") = 600
     Cells(LastRow + 1, "L") = 785
     
-    's‚Ì•¡»
+    'è¡Œã®è¤‡è£½
     Rows(LastRow + 1).Copy
     Range(Rows(LastRow + i - 1), Rows(LastRow + 1)).Insert
     
 End Sub
 
-Sub “ú•t‡ƒ\[ƒg(dummy)
+Sub æ—¥ä»˜é †ã‚½ãƒ¼ãƒˆ(dummy)
 
 Dim LastRow As Long
 Dim sht As Worksheet
 
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
     With ActiveSheet
 
-        'ƒ\[ƒg‚ÌƒNƒŠƒA
+        'ã‚½ãƒ¼ãƒˆã®ã‚¯ãƒªã‚¢
         .Sort.SortFields.Clear
     
-        'ƒ\[ƒg‚Ìİ’è
+        'ã‚½ãƒ¼ãƒˆã®è¨­å®š
         .Sort.SortFields.Add _
             Key:=ActiveSheet.Cells(16, "A"), _
             SortOn:=xlSortOnValues, _
             Order:=xlAscending, _
             DataOption:=xlSortNormal
         
-        '“ú•t—ñ‚ğŠî€‚Éƒ\[ƒg
+        'æ—¥ä»˜åˆ—ã‚’åŸºæº–ã«ã‚½ãƒ¼ãƒˆ
         With .Sort
             .SetRange Range(Cells(16, "A"), Cells(LastRow - 1, "L"))
             .Header = xlYes
@@ -211,7 +212,7 @@ Dim sht As Worksheet
 
 End Sub
 
-Sub ƒGƒŠƒA–ˆ’P‰¿İ’è(dummy)
+Sub ã‚¨ãƒªã‚¢æ¯å˜ä¾¡è¨­å®š(dummy)
 
 Dim LastRow As Long
 Dim i As Long
@@ -222,19 +223,19 @@ Dim Target1 As Variant
 Dim Target2 As Variant
 Dim Target3 As Variant
     
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
-    '‘ÎÛ•¶š
-    Target1 = Array("’†l‘", "‹ãB1", "‹ãB2", "“ì‹ãB")
-    Target2 = Array("‰«“ê")
-    Target3 = Array("¼“ú–{")
+    'å¯¾è±¡æ–‡å­—
+    Target1 = Array("ä¸­å››å›½", "ä¹å·1", "ä¹å·2", "å—ä¹å·")
+    Target2 = Array("æ²–ç¸„")
+    Target3 = Array("è¥¿æ—¥æœ¬")
     
     Application.DisplayAlerts = False
 
         With ActiveSheet
 
-            'ÅIs‚©‚çæ“ª‚Öƒ‹[ƒv
+            'æœ€çµ‚è¡Œã‹ã‚‰å…ˆé ­ã¸ãƒ«ãƒ¼ãƒ—
             For i = LastRow To 1 Step -1
 
                 For j = 0 To UBound(Target1)
@@ -287,7 +288,7 @@ Dim Target3 As Variant
 
 End Sub
 
-Sub ’P‰¿F•t‚¯(dummy)
+Sub å˜ä¾¡è‰²ä»˜ã‘(dummy)
 
 Dim LastRow As Long
 Dim i As Long
@@ -300,20 +301,20 @@ Dim Target2 As Variant
 Dim Target3 As Variant
 Dim Target4 As Variant
 
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
-    '‘ÎÛ•¶š
-    Target1 = Array("ƒ„ƒ}ƒg", "ƒ„ƒ}ƒgƒ^ƒCƒ€ƒT[ƒrƒX")
+    'å¯¾è±¡æ–‡å­—
+    Target1 = Array("ãƒ¤ãƒãƒˆ", "ãƒ¤ãƒãƒˆã‚¿ã‚¤ãƒ ã‚µãƒ¼ãƒ“ã‚¹")
     Target2 = Array("DM")
-    Target3 = Array("q‹ó•Ö")
-    Target4 = Array("ƒZ[ƒ‹•i‚Ì‚İ‘—•t", "Â” ˆê®", "ğ”Ì‘£•¨ˆê®")
+    Target3 = Array("èˆªç©ºä¾¿")
+    Target4 = Array("ã‚»ãƒ¼ãƒ«å“ã®ã¿é€ä»˜", "é’ç®±ä¸€å¼", "é…’è²©ä¿ƒç‰©ä¸€å¼")
     
     Application.DisplayAlerts = False
     
         With ActiveSheet
 
-            'ÅIs‚©‚çæ“ª‚Öƒ‹[ƒv
+            'æœ€çµ‚è¡Œã‹ã‚‰å…ˆé ­ã¸ãƒ«ãƒ¼ãƒ—
             For i = LastRow To 1 Step -1
 
                 For j = 0 To UBound(Target1)
@@ -321,7 +322,7 @@ Dim Target4 As Variant
                 For l = 0 To UBound(Target3)
                 For m = 0 To UBound(Target4)
 
-                    '“Á’è•¶š‚ª‚ ‚Á‚½‚çƒZƒ‹‚ÌF•ÏX
+                    'ç‰¹å®šæ–‡å­—ãŒã‚ã£ãŸã‚‰ã‚»ãƒ«ã®è‰²å¤‰æ›´
                     If InStr(Cells(i, "N"), Target1(j)) >= 1 Then
                         .Cells(i, "J").Interior.ColorIndex = 6
                     End If
@@ -353,24 +354,24 @@ Dim Target4 As Variant
 
 End Sub
 
-Sub Â” ˆê®‚É•¶Œ¾’Ç‰Á(dummy)
+Sub é’ç®±ä¸€å¼ã«æ–‡è¨€è¿½åŠ (dummy)
 
 Dim LastRow As Long
 Dim i As Long
 
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
     With ActiveSheet
 
-        'ÅIs‚©‚çæ“ª‚Öƒ‹[ƒv
+        'æœ€çµ‚è¡Œã‹ã‚‰å…ˆé ­ã¸ãƒ«ãƒ¼ãƒ—
         For i = LastRow To 1 Step -1
 
             On Error Resume Next
             
-                '"Â” ˆê®"‚ª‚ ‚ê‚Î”õl‚É•¶Œ¾’Ç‰Á
-                If InStr(Cells(i, "M"), "Â” ˆê®") >= 1 Then
-                    Cells(i, "M") = Cells(i, "M").Value & "^«•ï”ï‚Ì‚İTŸì‹Æ‚Æ“¯ˆê’P‰¿"
+                '"é’ç®±ä¸€å¼"ãŒã‚ã‚Œã°å‚™è€ƒã«æ–‡è¨€è¿½åŠ 
+                If InStr(Cells(i, "M"), "é’ç®±ä¸€å¼") >= 1 Then
+                    Cells(i, "M") = Cells(i, "M").Value & "ï¼æ¢±åŒ…è²»ã®ã¿é€±æ¬¡ä½œæ¥­ã¨åŒä¸€å˜ä¾¡"
                 End If
             
             On Error GoTo 0
@@ -381,28 +382,28 @@ Dim i As Long
     
 End Sub
 
-Sub «•ïì‹Æ”ï•ÏX(dummy)
+Sub æ¢±åŒ…ä½œæ¥­è²»å¤‰æ›´(dummy)
 
 Dim LastRow As Long
 Dim i As Long
 Dim j As Long
 Dim Target As Variant
 
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
-    '‘ÎÛ•¶š
-    Target = Array("Â” ˆê®", "ƒZ[ƒ‹•i‚Ì‚İ‘—•t")
+    'å¯¾è±¡æ–‡å­—
+    Target = Array("é’ç®±ä¸€å¼", "ã‚»ãƒ¼ãƒ«å“ã®ã¿é€ä»˜")
 
     Application.DisplayAlerts = False
         With ActiveSheet
 
-            'ÅIs‚©‚çæ“ª‚Öƒ‹[ƒv
+            'æœ€çµ‚è¡Œã‹ã‚‰å…ˆé ­ã¸ãƒ«ãƒ¼ãƒ—
             For i = LastRow To 1 Step -1
 
                 For j = 0 To UBound(Target)
 
-                    '“Á’è•¶š‚ª‚ ‚Á‚½‚ç«•ïì‹Æ”ï‚ğ•ÏX
+                    'ç‰¹å®šæ–‡å­—ãŒã‚ã£ãŸã‚‰æ¢±åŒ…ä½œæ¥­è²»ã‚’å¤‰æ›´
                     If InStr(Cells(i, "M"), Target(j)) >= 1 Then
                         .Cells(i, "H") = 24
                     End If
@@ -416,7 +417,7 @@ Dim Target As Variant
 
 End Sub
 
-Sub ƒV[ƒg•¡»‚Æ•s—vsíœ(dummy)
+Sub ã‚·ãƒ¼ãƒˆè¤‡è£½ã¨ä¸è¦è¡Œå‰Šé™¤(dummy)
 
 Dim LastRow1 As Long
 Dim LastRow2 As Long
@@ -424,25 +425,25 @@ Dim i As Long
 Dim j As Long
 Dim targetSheet As Worksheet
 
-    'ƒV[ƒg‚Ì–¼‘O•ÏX
-    ActiveSheet.Name = "’Ç‰Á”­‘—_DM•Ö"
+    'ã‚·ãƒ¼ãƒˆã®åå‰å¤‰æ›´
+    ActiveSheet.Name = "è¿½åŠ ç™ºé€_DMä¾¿"
     
-    'ƒV[ƒg‚Ì•¡»
-    Worksheets("’Ç‰Á”­‘—_DM•Ö").Copy Before:=Worksheets(1)
+    'ã‚·ãƒ¼ãƒˆã®è¤‡è£½
+    Worksheets("è¿½åŠ ç™ºé€_DMä¾¿").Copy Before:=Worksheets(1)
     
-    '•¡»‚µ‚½ƒV[ƒg‚Ì–¼‘O•ÏX
-    ActiveSheet.Name = "’Ç‰Á”­‘—_‘î”z•Ö"
+    'è¤‡è£½ã—ãŸã‚·ãƒ¼ãƒˆã®åå‰å¤‰æ›´
+    ActiveSheet.Name = "è¿½åŠ ç™ºé€_å®…é…ä¾¿"
 
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow1 = Cells(Rows.Count, 1).End(xlUp).Row
 
-        'ÅIs‚©‚çæ“ª‚Öƒ‹[ƒv
+        'æœ€çµ‚è¡Œã‹ã‚‰å…ˆé ­ã¸ãƒ«ãƒ¼ãƒ—
         For i = LastRow1 To 1 Step -1
         
             On Error Resume Next
 
-                '"ƒ„ƒ}ƒgDM•Ö"‚Ìs‚ğíœ
-                If InStr(Cells(i, "N"), "ƒ„ƒ}ƒgDM•Ö") >= 1 Then
+                '"ãƒ¤ãƒãƒˆDMä¾¿"ã®è¡Œã‚’å‰Šé™¤
+                If InStr(Cells(i, "N"), "ãƒ¤ãƒãƒˆDMä¾¿") >= 1 Then
                     Rows(i).Delete
                 End If
                 
@@ -450,22 +451,22 @@ Dim targetSheet As Worksheet
                     
         Next
         
-    '•s—v—ñ‚ğíœ
+    'ä¸è¦åˆ—ã‚’å‰Šé™¤
     Range("N:Q").Delete
             
-    'ƒAƒNƒeƒBƒuƒV[ƒg‚ğ"’Ç‰Á”­‘—_DM•Ö"‚É•ÏX
-    Sheets("’Ç‰Á”­‘—_DM•Ö").Select
+    'ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚·ãƒ¼ãƒˆã‚’"è¿½åŠ ç™ºé€_DMä¾¿"ã«å¤‰æ›´
+    Sheets("è¿½åŠ ç™ºé€_DMä¾¿").Select
     
-    'ÅIsæ“¾
+    'æœ€çµ‚è¡Œå–å¾—
     LastRow2 = Cells(Rows.Count, 1).End(xlUp).Row
 
-        'ÅIs‚©‚çæ“ª‚Öƒ‹[ƒv
+        'æœ€çµ‚è¡Œã‹ã‚‰å…ˆé ­ã¸ãƒ«ãƒ¼ãƒ—
         For j = LastRow2 To 1 Step -1
         
             On Error Resume Next
 
-                '"ƒ„ƒ}ƒgDM•Ö"ˆÈŠO‚Ìs‚ğíœ
-                If InStr(Cells(j, "N"), "ƒ„ƒ}ƒgDM•Ö") = 0 Then
+                '"ãƒ¤ãƒãƒˆDMä¾¿"ä»¥å¤–ã®è¡Œã‚’å‰Šé™¤
+                If InStr(Cells(j, "N"), "ãƒ¤ãƒãƒˆDMä¾¿") = 0 Then
                     Rows(j).Delete
                 End If
                 
@@ -473,23 +474,23 @@ Dim targetSheet As Worksheet
                     
         Next
         
-    '•s—v—ñ‚ğíœ
+    'ä¸è¦åˆ—ã‚’å‰Šé™¤
     Range("N:Q").Delete
     
-    'Á‚¦‚Ä‚µ‚Ü‚Á‚½ƒwƒbƒ_[•ª‚Ìs‚ğ‘}“ü
+    'æ¶ˆãˆã¦ã—ã¾ã£ãŸãƒ˜ãƒƒãƒ€ãƒ¼åˆ†ã®è¡Œã‚’æŒ¿å…¥
     Range("1:16").Insert
         
-    'ƒ„ƒ}ƒgDM•ÖˆÈŠO‚ğÁ‚µ‚½–‚ÅÁ‚¦‚½ƒ^ƒCƒgƒ‹“™‚ÌƒRƒsƒy
-    Sheets("’Ç‰Á”­‘—_‘î”z•Ö").Select
-    Range("1:16").Copy Sheets("’Ç‰Á”­‘—_DM•Ö").Range("A1")
+    'ãƒ¤ãƒãƒˆDMä¾¿ä»¥å¤–ã‚’æ¶ˆã—ãŸäº‹ã§æ¶ˆãˆãŸã‚¿ã‚¤ãƒˆãƒ«ç­‰ã®ã‚³ãƒ”ãƒš
+    Sheets("è¿½åŠ ç™ºé€_å®…é…ä¾¿").Select
+    Range("1:16").Copy Sheets("è¿½åŠ ç™ºé€_DMä¾¿").Range("A1")
     
     
-    '•s—vƒ[ƒNƒV[ƒgíœ
+    'ä¸è¦ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆå‰Šé™¤
     Application.DisplayAlerts = False
     
     For Each targetSheet In Worksheets
     
-        If Not targetSheet.Name Like "’Ç‰Á”­‘—*" Then
+        If Not targetSheet.Name Like "è¿½åŠ ç™ºé€*" Then
             targetSheet.Delete
             
         End If
