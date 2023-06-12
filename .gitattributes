@@ -1,0 +1,4 @@
+*.bas working-tree-encoding=cp932
+*.dcm working-tree-encoding=cp932
+*.frm working-tree-encoding=cp932
+*.cls working-tree-encoding=cp932
