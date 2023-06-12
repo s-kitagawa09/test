@@ -2,7 +2,7 @@ Attribute VB_Name = "Module1"
 Sub 処理01_非請求削除()
 
 Dim Fso As FileSystemObject
-    'Gitテスト
+    'Gitテスト2
 
     Call 非請求削除(dummy)
     
